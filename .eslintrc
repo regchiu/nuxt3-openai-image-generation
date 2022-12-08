@@ -1,0 +1,31 @@
+{
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": "latest", // Using ESLint >= v8.x
+    "ecmaFeatures": {
+      "jsx": true // Using JSX
+    },
+    "sourceType": "module"
+  },
+  "extends": [
+    // Including "eslint-plugin-vue" and "eslint-config-standard" but override eslint-plugin-vue rules
+    // See: https://github.com/nuxt/eslint-config/blob/main/packages/eslint-config/index.js
+    // See: https://github.com/nuxt/eslint-config/blob/main/packages/eslint-config-typescript/index.js
+    "@nuxtjs/eslint-config-typescript"
+  ],
+  "rules": {
+    /**********************/
+    /*     Vue Rules      */
+    /**********************/
+    "vue/multi-word-component-names": "off",
+    "vue/no-multiple-template-root": "off",
+    "vue/max-attributes-per-line": ["error", {
+      "singleline": {
+        "max": 1
+      },      
+      "multiline": {
+        "max": 1
+      }
+    }]
+  }
+}

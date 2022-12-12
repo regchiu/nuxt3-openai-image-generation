@@ -1,5 +1,5 @@
 import { Configuration, OpenAIApi } from 'openai'
-import axios from 'axios'
+import { isAxiosError } from 'axios'
 
 interface CreateImage {
   prompt: string
@@ -44,7 +44,7 @@ export default defineEventHandler(async (event) => {
     event.node.res.statusCode = 200
     return imageUrl
   } catch (error) {
-    if (axios.isAxiosError(error)) {
+    if (isAxiosError(error)) {
       if (error.response) {
         console.log(error.response.status)
         console.log(error.response.data)

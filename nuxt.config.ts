@@ -12,8 +12,7 @@ export default defineNuxtConfig({
     strict: true
   },
   runtimeConfig: {
-    openaiApiKey: '',
-    public: {}
+    openaiApiKey: ''
   },
   modules: [
     // See: https://github.com/nuxt-modules/color-mode

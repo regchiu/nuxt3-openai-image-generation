@@ -6,17 +6,19 @@
 
 ## Setup
 
-Make sure to install the dependencies:
+Go https://beta.openai.com/account/api-keys to create API Key.
 
-```bash
-yarn install
-```
-Copy `.env.example` to `.env`
+Copy `.env.example` to `.env` or you can enter your API key on the website.
 ```env
 # Go https://beta.openai.com/account/api-keys to create
 NUXT_OPENAI_API_KEY=openai_api_key
 ```
 
+Make sure to install the dependencies:
+
+```bash
+yarn install
+```
 ## Development Server
 
 Start the development server on http://localhost:3000

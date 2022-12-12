@@ -1,5 +1,6 @@
 import { Configuration, OpenAIApi } from 'openai'
 interface CreateImage {
+  apiKey: string,
   prompt: string
   n?: number
   size: 'small' | 'medium' | 'large'
@@ -8,15 +9,16 @@ interface CreateImage {
 }
 
 type CreateImageRequestSize = '256x256' | '512x512' | '1024x1024'
-const configuration = new Configuration({
-  apiKey: useRuntimeConfig().openaiApiKey
-})
-
-const openai = new OpenAIApi(configuration)
 
 export default defineEventHandler(async (event) => {
   const body: CreateImage = await readBody(event)
-  const { prompt, size } = body
+  const { apiKey, prompt, size } = body
+
+  const configuration = new Configuration({
+    apiKey: useRuntimeConfig().openaiApiKey || apiKey
+  })
+
+  const openai = new OpenAIApi(configuration)
 
   let imageSize: CreateImageRequestSize = '1024x1024'
   switch (size) {

@@ -9,12 +9,21 @@
         @submit.prevent="generateImage"
       >
         <label class="block">
+          <span class="text-sm font-bold">API Key</span>
+          <input
+            v-model="apiKey"
+            type="text"
+            class="form-input rounded mt-1 block w-full dark:bg-nuxt-gray"
+            placeholder="OpenAI API Key"
+          >
+        </label>
+        <label class="block">
           <span class="text-sm font-bold">Prompt</span>
           <input
             v-model="prompt"
             type="text"
             class="form-input rounded mt-1 block w-full dark:bg-nuxt-gray"
-            placeholder="description an image"
+            placeholder="Description an image"
           >
         </label>
         <label class="block">
@@ -70,6 +79,7 @@
   </div>
 </template>
 <script setup lang="ts">
+const apiKey = ref('')
 const prompt = ref('')
 const size = ref('large')
 const imageSize = computed(() => {
@@ -95,6 +105,7 @@ async function generateImage () {
   const { data, error } = await useFetch('/api/openai-generate-image', {
     method: 'post',
     body: {
+      apiKey: apiKey.value,
       prompt: prompt.value,
       size: size.value
     }

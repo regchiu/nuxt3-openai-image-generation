@@ -1,6 +1,4 @@
 import { Configuration, OpenAIApi } from 'openai'
-import { isAxiosError } from 'axios'
-
 interface CreateImage {
   prompt: string
   n?: number
@@ -44,22 +42,12 @@ export default defineEventHandler(async (event) => {
     event.node.res.statusCode = 200
     return imageUrl
   } catch (error) {
-    if (isAxiosError(error)) {
-      if (error.response) {
-        console.log(error.response.status)
-        console.log(error.response.data)
-        return sendError(event, createError({
-          data: error.response.data,
-          statusMessage: error.message
-        }))
-      } else {
-        console.log(error.message)
-        return sendError(event, createError({
-          statusMessage: error.message
-        }))
-      }
+    if ((error as any).response) {
+      return sendError(event, createError({
+        data: (error as any).response.data,
+        statusMessage: (error as any).message
+      }))
     } else if (error instanceof Error) {
-      console.log(error.message)
       return sendError(event, createError({
         statusMessage: error.message
       }))

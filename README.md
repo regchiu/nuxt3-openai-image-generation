@@ -1,6 +1,7 @@
 # Nuxt 3 OpenAI Image Generation
 
 ## Preview
+
 ![Preview 1](/preview/a-cat-is-listening-to-spotify.png)
 ![Preview 2](/preview/spider-man.png)
 

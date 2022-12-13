@@ -25,7 +25,8 @@
 </template>
 
 <script setup lang="ts">
-import { useColorModeStore } from '@/store/color-mode'
+import { useColorModeStore } from '@/stores/color-mode'
+
 const colorModeStore = useColorModeStore()
 const nuxtLogoSrc = computed(() => colorModeStore.isDarkMode ? '/img/full-logo-green-light.svg' : '/img/full-logo-green-dark.svg')
 const colorModeIcon = computed(() => colorModeStore.isDarkMode ? 'carbon:moon' : 'carbon:sun')

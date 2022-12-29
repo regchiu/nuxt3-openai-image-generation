@@ -23,7 +23,7 @@
             v-model="prompt"
             type="text"
             class="form-input rounded mt-1 block w-full dark:bg-nuxt-gray"
-            placeholder="Description an image"
+            placeholder="Image description"
           >
         </label>
         <label class="block">

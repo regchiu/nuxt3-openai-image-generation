@@ -1,5 +1,5 @@
 <template>
-  <div class="py-12">
+  <div class="max-w-5xl py-8 px-4 mx-auto">
     <h1 class="text-3xl font-bold">
       OpenAI Image Generation
     </h1>
@@ -68,13 +68,13 @@
       <p v-if="loading">
         Generating...
       </p>
-      <img
+      <nuxt-img
         v-else-if="!loading && imageUrl"
         :src="imageUrl"
         :width="imageSize"
         :height="imageSize"
-        alt="Generation Image"
-      >
+        alt="Generation image"
+      />
     </div>
   </div>
 </template>

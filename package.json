@@ -9,6 +9,7 @@
     "lint": "eslint --fix ."
   },
   "devDependencies": {
+    "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/color-mode": "^3.2.0",

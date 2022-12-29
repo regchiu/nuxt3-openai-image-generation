@@ -21,6 +21,8 @@ export default defineNuxtConfig({
     'nuxt-icon',
     // See: https://github.com/nuxt-modules/tailwindcss
     '@nuxtjs/tailwindcss',
+    // See: https://v1.image.nuxtjs.org
+    '@nuxt/image-edge',
     // See: https://pinia.vuejs.org/ssr/nuxt.html#installation
     [
       '@pinia/nuxt',
@@ -31,7 +33,8 @@ export default defineNuxtConfig({
           // automatically imports `defineStore` as `definePiniaStore`
           ['defineStore', 'definePiniaStore'] // import { defineStore as definePiniaStore } from 'pinia'
         ]
-      }]
+      }
+    ]
   ],
   colorMode: {
     preference: 'system', // default value of $colorMode.preference

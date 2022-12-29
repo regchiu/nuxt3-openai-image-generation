@@ -1,6 +1,6 @@
 <template>
-  <header>
-    <div class="flex items-center border-b border-nuxt-gray/10 dark:border-white h-full px-1 py-4 mx-auto sm:px-3 lg:px-6">
+  <header class="border-b border-nuxt-gray/10 dark:border-white h-full p-4">
+    <div class="flex items-center">
       <div class="flex items-center flex-1 justify-center lg:justify-start">
         <ClientOnly>
           <img

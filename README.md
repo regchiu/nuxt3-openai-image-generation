@@ -27,3 +27,7 @@ Start the development server on http://localhost:3000
 ```bash
 yarn dev
 ```
+
+## Check your DALL·E API usage
+
+See: https://beta.openai.com/account/usage
